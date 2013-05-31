@@ -1,0 +1,36 @@
+<html>
+<header>
+  <link rel="stylesheet" href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="http://pall.sigurdsson.is/css/style.css" />
+</header>
+<body>
+  <div id="box" class="wrapper">
+    <div class="content">
+    <h1>Hello cruel world. You are looking at a lot of ilos</h1>
+	
+	<table class="table">
+      	<tr>
+		<th>Host Name</th>
+		<th>Address</th>
+	</tr>  
+	{% for host in hosts %}
+	  <tr>
+	    <td>
+		<a href="{% url inframan.ilo.views.detail host.host_name %}">
+		{{ host.host_name }}
+		</a>
+	    </td>
+	    <td>
+		<a href="https://{{ host.address }}">
+		https://{{ host.address }}
+		</a>		
+</td>
+	  </tr>
+        {% endfor %}
+
+	</table>
+
+    </div>
+  </div>
+</body>
+</html>

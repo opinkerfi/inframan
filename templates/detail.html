@@ -1,0 +1,47 @@
+<html>
+<header>
+  <link rel="stylesheet" href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="http://pall.sigurdsson.is/css/style.css" />
+</header>
+<body>
+  <div id="box" class="wrapper">
+    <div class="content">
+
+
+    {% if error %}
+        There was an error: <div class="alert alert-danger">{{ error }}</div>
+    {% else %}
+        <h1>Hello cruel world. You are looking at {{ my_ilo.host_name }}</h1>
+
+        <table class=table>
+        <tr>
+          <td>Host name </td>
+          <td>{{ my_ilo.host_name }} <td>
+        </tr>
+        <tr>
+          <td>Address </td>
+          <td>{{ my_ilo.address }} <td>
+        </tr>
+        <tr>
+          <td>Username </td>
+          <td>{{ my_ilo.username }} <td>
+        </tr>
+        <tr>
+          <td>Password </td>
+          <td>{{ my_ilo.password }} <td>
+        </tr>
+        <tr>
+          <td>Product Name </td>
+          <td>{{ product_name }} <td>
+        </tr>
+        <tr>
+          <td>Serial Number </td>
+          <td>{{ serial_number }} <td>
+        </tr>
+        </table>
+    {% endif %}
+
+    </div>
+  </div>
+</body>
+</html>
