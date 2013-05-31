@@ -12,7 +12,7 @@
         There was an error: <div class="alert alert-danger">{{ error }}</div>
     {% else %}
         <h1>Hello cruel world. You are looking at {{ my_ilo.host_name }}</h1>
-
+        You are looking at cached information for <i>{{ my_ilo.host_name }}</i>. Click <a href="{% url inframan.ilo.views.update my_ilo.host_name %}">here</a> to update it.
         <table class=table>
         <tr>
           <td>Host name </td>
@@ -32,15 +32,21 @@
         </tr>
         <tr>
           <td>Product Name </td>
-          <td>{{ product_name }} <td>
+          <td>{{ my_ilo.product_name }} <td>
         </tr>
         <tr>
           <td>Serial Number </td>
-          <td>{{ serial_number }} <td>
+          <td>{{ my_ilo.serial_number }} <td>
         </tr>
+
         </table>
     {% endif %}
-
+    <hr>
+    Debug information:
+    {% for i in host_data %}
+        {{ i }}
+        <hr>
+    {% endfor %}
     </div>
   </div>
 </body>

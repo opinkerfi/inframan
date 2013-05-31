@@ -10,7 +10,9 @@ urlpatterns = patterns('',
     # url(r'^inframan/', include('inframan.foo.urls')),
     url(r'^$', 'inframan.ilo.views.index'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^(?P<ilo_name>.+)/?$', 'inframan.ilo.views.detail'),
+    url(r'^update/(?P<host_name>.+)/?$', 'inframan.ilo.views.update'),
+    url(r'^host/(?P<host_name>.+)/?$', 'inframan.ilo.views.detail'),
+
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
