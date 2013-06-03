@@ -1,0 +1,16 @@
+<html>
+<header>
+  <link rel="stylesheet" href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="http://pall.sigurdsson.is/css/style.css" />
+</header>
+<body>
+  <div id="box" class="wrapper">
+    <div class="content">
+    <h1>ILO data from {{ my_ilo }} have been updated</h1>
+
+       click <a href="{% url inframan.ilo.views.detail my_ilo.host_name %}">here</a> to view the updated result.
+
+    </div>
+  </div>
+</body>
+</html>
